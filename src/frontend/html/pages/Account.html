@@ -1,0 +1,27 @@
+<h1>{{@tabTitle}}</h1>
+<div class="display button-bar">
+    <a class="button" href="{{@baseURI}}account/changepassword"><i class="icon">edit</i>Change Password</a>
+</div>
+<h2 class="region-title"><i class="icon">account_circle</i>Account Profile</h2>
+<table class="table-display">
+    <tbody>
+    <tr>
+        <td>First Name</td>
+        <td>{{@firstName}}</td>
+        <td>Last Name</td>
+        <td>{{@lastName}}</td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>{{@username}}</td>
+        <td>E-Mail</td>
+        <td>{{@email}}</td>
+    </tr>
+    <tr>
+        <td>Roles</td>
+        <td colspan="4">
+            <textarea readonly class="no-edit">{{@roleList}}</textarea>
+        </td>
+    </tr>
+    </tbody>
+</table>

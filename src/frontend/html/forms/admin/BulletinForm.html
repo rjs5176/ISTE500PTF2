@@ -1,0 +1,47 @@
+<div class="button-bar">
+    <span class="button form-submit-button" id="edit"><i class="icon">save</i>Save</span>
+    <a class="button delete-button confirm-button" href="javascript: remove('{{@id}}')"><i class="icon">delete</i>Delete</a>
+    <a class="button" href="{{@baseURI}}admin/bulletins"><i class="icon">backspace</i>Cancel</a>
+</div>
+<form id="edit-form" class="table-form" onsubmit="{{@formScript}}">
+    <h2 class="region-title"><i class="icon">info</i>Bulletin Profile<a class="history-link" href="{{@baseURI}}history/bulletin/{{@id}}"><i class="icon" title="View History">history</i></a></h2>
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td class="required">Title</td>
+            <td><input type="text" id="title" value="{{@title}}"></td>
+            <td class="required">Type</td>
+            <td>
+                <select id="type">
+                    <option value="i">Info</option>
+                    <option value="a" {{@typeAlert}}>Alert</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="required">Start Date</td>
+            <td><input type="text" id="startDate" class="date-input" value="{{@startDate}}"></td>
+            <td>End Date</td>
+            <td><input type="text" id="endDate" class="date-input" value="{{@endDate}}"></td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td colspan="3"><textarea id="message">{{@message}}</textarea></td>
+        </tr>
+        <tr>
+            <td>Roles</td>
+            <td>
+                <select id="roles" multiple size="10">{{@roleSelect}}</select>
+            </td>
+            <td class="required">Disabled</td>
+            <td>
+                <select id="inactive">
+                    <option value="0">No</option>
+                    <option value="1" {{@inactiveYes}}>Yes</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<script src="{{@baseURI}}scripts/admin/bulletins.js"></script>

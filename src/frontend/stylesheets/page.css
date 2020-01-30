@@ -1,0 +1,466 @@
+:root {
+    --error: #DC3232;
+    --notice: #6a97c4;
+    --success: #39B54A;
+
+    --primary-color: #004479;
+    --accent-color: #4F6BA0;
+    --nav-color: #000000;
+    --nav-text-color: #FFF;
+
+    --drop-down-color: #FFF;
+    --border-color: #D3D3D3;
+    --drop-down-link-hover: #333;
+
+    --main-background: #F3F3F3;
+    --dark-background: #38383D;
+
+    --shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+    --md-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+    --text-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+    --image-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+
+    --bulletin-border-color: #888;
+    --bulletin-shadow: 0 1px 6px -1px rgba(0, 0, 0, 0.1);
+
+    --menu-font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Material Icons";
+    src: url("../fonts/MaterialIcons-Regular.ttf");
+}
+
+a {
+    color: blue;
+}
+
+strong {
+    font-weight: 600;
+}
+
+div#wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #FFF;
+    width: 100%;
+}
+
+/* Sidebar */
+
+header {
+    background-color: var(--primary-color);
+    height: 60px;
+    position: relative;
+    display: block;
+}
+
+header div#header-accent {
+    height: 20px;
+    width: 100%;
+    background-color: var(--accent-color);
+    position: absolute;
+    display: none;
+    bottom: 0;
+}
+
+header span {
+    z-index: 999;
+}
+
+header span#company-logo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 50px;
+    width: 384px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
+header span#app-logo {
+    background-image: url('../media/mercury_logo.png');
+    position: absolute;
+    height: 50px;
+    width: 360px;
+    top: 7px;
+    left: 10px;
+    z-index: 2;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+header span#company-name {
+    color: #FFFFFF;
+    position: absolute;
+    top: 59px;
+    line-height: 20px;
+    left: 85px;
+}
+
+header span#app-name {
+    display: block;
+    font-size: 2.5rem;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: #FFF;
+    text-shadow: var(--text-shadow);
+}
+
+header span#app-caption{
+    color: #FFF;
+    position: absolute;
+    right: 10px;
+    user-select: none;
+}
+
+header span#app-caption {
+    bottom: -22px;
+    font-weight: 600;
+}
+
+/* Operator */
+
+header span#operator {
+    position: absolute;
+    right: 5px;
+    top: 85px;
+    color: #888;
+    opacity: 50%;
+    font-size: 1.5rem;
+}
+
+/* Navigation */
+
+nav {
+    z-index: 998;
+    background-color: var(--nav-color);
+}
+
+nav > ul > li {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    min-width: 110px;
+    border-right: 1px solid #FFF;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+nav > ul > li > span.nav-item {
+    cursor: default;
+}
+
+nav ul li:hover {
+    background-color: var(--drop-down-link-hover);
+}
+
+nav ul li:hover > .nav-item {
+    color: #FFF;
+}
+
+nav ul li .nav-item, nav ul li a {
+    vertical-align: middle;
+    text-decoration: none;
+    display: block;
+}
+
+nav > ul > li > .nav-item {
+    color: var(--nav-text-color);
+    line-height: 25px;
+    font-size: 1.1rem;
+    font-weight: var(--menu-font-weight);
+    text-align: center;
+    user-select: none;
+}
+
+nav > ul > li i.icon {
+    font-size: 16px;
+    line-height: 25px;
+    vertical-align: top;
+}
+
+nav ul li ul {
+    margin-left: -1px;
+    z-index: 998;
+    text-align: left;
+    box-shadow: var(--shadow);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity .1s linear;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow: auto;
+    background-color: var(--drop-down-color);
+    min-width: 180px;
+}
+
+nav ul li ul li {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding-left: 10px;
+    line-height: 25px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: var(--menu-font-weight);
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav ul li ul li:last-child a {
+    border-bottom: none;
+}
+
+nav ul li ul li a:hover {
+    color: #FFF;
+    background-color: var(--drop-down-link-hover);
+}
+
+nav ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Wrapper */
+
+div#wrapper {
+    background-color: var(--accent-color);
+}
+
+div#content {
+    flex: 1 0 auto;
+    display: flex;
+    position: relative;
+    background-color: var(--main-background);
+}
+
+/* Sidebar */
+
+div#sidebar {
+    color: #FFFFFF;
+    z-index: 997;
+    flex: 0 0 180px;
+    background-color: var(--accent-color);
+}
+
+div#sidebar img {
+    vertical-align: top;
+    height: 20px;
+    width: 20px;
+    margin-right: 3px;
+}
+
+div#sidebar h2 {
+    border-bottom: 1px solid var(--accent-color);
+    border-top: 1px solid var(--accent-color);
+    background-color: var(--main-background);
+    color: #000;
+
+    padding: 7px 5px 5px 10px;
+
+    font-size: 1.4rem;
+
+    margin-top: -1px;
+
+    user-select: none;
+}
+
+div#sidebar h2 i.icon {
+    font-size: inherit;
+}
+
+div#sidebar ul {
+    padding: 10px 0 0 15px;
+    color: #FFF;
+}
+
+div#sidebar ul li {
+    margin-bottom: 3px;
+    list-style-type: none;
+}
+
+div#sidebar ul li a {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+div#sidebar ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+div#sidebar ul li a:hover::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/* View */
+
+div#view {
+    flex: 1;
+    position: relative;
+    padding: 5px 20px;
+    max-width: 1250px;
+    min-width: 619px;
+}
+
+div#view ul li {
+    list-style-position: inside;
+}
+
+div#content.full-width-view div#view {
+    max-width: 100%;
+}
+
+div#portal-view {
+    width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer */
+
+footer {
+    z-index: 998;
+    background-color: var(--primary-color);
+    padding: 10px;
+    display: block;
+    height: 15px;
+}
+
+footer * {
+    color: #FFF;
+    font-size: .8rem;
+}
+
+footer p:first-child {
+    float: left;
+}
+
+footer p:last-child {
+    float: right;
+}
+
+footer p a {
+    text-decoration: none;
+    cursor: default;
+}
+
+h1 {
+    font-size: 2.4rem;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+/* Veil */
+
+div#veil {
+    background-color: var(--main-background);
+    z-index: 996;
+    cursor: not-allowed;
+
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div#veil img {
+    width: 200px;
+    height: 19px;
+    margin-top: 25px;
+    margin-left: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Basic page elements */
+
+h2 {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    padding: 10px 0;
+    user-select: none;
+}
+
+@media screen and (max-device-width: 800px) {
+    * {
+        font-size: 14pt;
+    }
+
+    div#sidebar {
+        display: none;
+    }
+
+    nav > ul > li {
+        display: block;
+    }
+
+    nav > ul > li > .nav-item {
+        text-align: left;
+        padding: 10px;
+    }
+
+    nav ul li ul li a {
+        padding: 10px;
+    }
+
+    div#portal-view, div#view {
+        width: 100%;
+        min-width: 0;
+        overflow-x: scroll;
+        padding: 10px;
+    }
+
+    header span#company-logo {
+        display: none;
+    }
+
+    header span#app-logo {
+        left: 5px;
+        right: auto;
+        background-position: left;
+        max-width: 100%;
+    }
+}

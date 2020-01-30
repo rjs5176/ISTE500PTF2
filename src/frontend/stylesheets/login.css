@@ -1,0 +1,135 @@
+div#login-window * {
+    font-size: 10pt !important;
+}
+
+div#login-window {
+    display: block;
+    position: relative;
+    max-width: 600px;
+    height: 440px;
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
+    margin: 200px auto auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+span#login-logo {
+    display: block;
+    position: absolute;
+    left: 25px;
+    top: 30px;
+    width: 300px;
+    height: 105px;
+    background-image: url("../media/mercury_logo.png");
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+span#app-version {
+    font-size: 1.2rem;
+    color: #FFF;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+div#login-window form {
+    text-align: right;
+    position: absolute;
+    right: 30px;
+    bottom: 120px;
+}
+
+div#login-window form p {
+    padding: 5px;
+
+}
+
+div#login-window form input {
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: .2em;
+    padding: .25em .5em;
+    width: 249px;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: .8rem;
+}
+
+div#login-window form input[type="submit"] {
+    margin-top: 3px;
+    margin-right: 5px;
+    height: 25px;
+    width: 100px;
+    background: var(--error);
+    color: #FFF;
+    cursor: pointer;
+    padding: 0 .5em;
+    box-shadow: var(--shadow);
+}
+
+div#login-window form input[type="submit"]:hover {
+    background: var(--accent-color);
+}
+
+div#login-window div#notifications {
+    position: absolute;
+    width: 259px;
+    height: 63px;
+    min-width: 250px;
+
+    top: 220px;
+    left: 25px;
+
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+
+@media screen and (max-device-height: 800px) {
+    div#login-window {
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (max-device-width: 800px) {
+    div#login-window {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: none;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+    }
+
+    div#login-reflection {
+        display: none;
+    }
+
+    img#merlot-logo, div#login-window div#notifications, div#login-window form, span#app-version {
+        position: static;
+        display: block;
+        margin: auto;
+    }
+
+    img#merlot-logo {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    div#login-window div#notifications {
+        margin-bottom: 20px;
+    }
+
+    div#login-window form {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    span#app-version {
+        padding: 10px;
+    }
+}

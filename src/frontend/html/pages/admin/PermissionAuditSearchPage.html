@@ -1,0 +1,17 @@
+<div class="button-bar">
+    <span id="search" class="button form-submit-button"><i class="icon">search</i>Search</span>
+    <a href="{{@baseURI}}admin/users" class="button"><i class="icon">account_circle</i>Back</a>
+</div>
+<form id="search-form" class="search-form" onsubmit="return search()">
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td>Permission</td>
+            <td><input type="text" id="permission"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<div id="results"></div>
+<div id="user-display" title="Inspect User"></div>
+<script src="{{@baseURI}}scripts/admin/audit.js"></script>

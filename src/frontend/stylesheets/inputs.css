@@ -1,0 +1,130 @@
+.required::after {
+    content: "*";
+    font-weight: 600;
+    color: #CC0000;
+}
+
+/* Button Bar */
+
+div.button-bar {
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0 13px 0;
+}
+
+/* Buttons */
+
+.button, .button-noveil{
+    font-weight: normal !important;
+    font-size: 1rem;
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block !important;
+
+    background-color: #fefefe;
+    transition: background-color .1s linear;
+    box-shadow: 0 1px 2px #888;
+
+    position: relative;
+    width: auto;
+
+    padding: 1px 15px 2px;
+    box-sizing: border-box;
+}
+
+.button:hover, .button-noveil:hover {
+    color: #fff;
+    background-color: #d3d3d3;
+}
+
+.delete-button:hover {
+    color: #FFF;
+    background-color: var(--error);
+}
+
+.button img, .button-noveil img {
+    margin-right: 5px;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+}
+
+/* Icon Links */
+
+a.history-link {
+    font-size: inherit;
+}
+
+a.history-link:hover {
+    border-bottom: 1px solid #FFF;
+}
+
+/* Search forms */
+form.search-form {
+    border-bottom: 1px solid var(--border-color);
+}
+
+form.search-form tbody.additional-fields {
+    display: none;
+    border-top: 1px solid var(--border-color);
+}
+
+form.search-form > div.button-bar {
+    float: right;
+    text-align: right;
+    border-bottom: none;
+}
+
+div.button-bar .button-bar-title {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Table forms */
+form table select, form table input {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    border-radius: 3px;
+}
+
+form table input[type='submit'] {
+    border: none;
+    border-radius: 0;
+}
+
+form table input[type='checkbox'], form table input[type='radio'] {
+    width: auto !important;
+}
+
+form.search-form table.table-display tr td:nth-child(2n+1) {
+    color: #000;
+}
+
+table.table-display textarea {
+    height: 100px;
+    width: 500px;
+    resize: none;
+}
+
+/* Dialog Forms */
+div.dialog form span:first-child {
+    display: block;
+    font-weight: 600;
+}
+
+form.inline-form {
+    display: inline;
+    vertical-align: middle;
+}
+
+form.inline-form input {
+    height: 17px;
+    display: inline-block;
+}
+
+@media screen and (max-device-width: 800px) {
+    .button, .button-noveil {
+        padding: 5px 10px;
+        line-height: 40px;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="button-bar">
+    <span id="search" class="button form-submit-button"><i class="icon">search</i>Search</span>
+</div>
+<form id="search-form" class="search-form" onsubmit="return search()">
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td>Username</td>
+            <td><input type="text" id="username"></td>
+            <td>I.P. Address</td>
+            <td><input type="text" id="ipAddress"></td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td><input type="text" class="date-input" id="timeStart"></td>
+            <td>End Date</td>
+            <td><input type="text" class="date-input" id="timeEnd"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<div id="results"></div>
+<script src="{{@baseURI}}scripts/admin/badlogs.js"></script>

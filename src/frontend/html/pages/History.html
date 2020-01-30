@@ -1,0 +1,11 @@
+<h1>{{@tabTitle}}</h1>
+<div class="button-bar">
+    <span class="button browser-back"><i class="icon">backspace</i>Back</span>
+</div>
+<h2 class="region-title"><i class="icon">history</i>History Results</h2>
+<div id="results" class="wait"></div>
+<div id="historyItems"></div>
+<script src="{{@baseURI}}scripts/history.js"></script>
+<script>
+    loadHistory("{{@object}}", "{{@index}}")
+</script>

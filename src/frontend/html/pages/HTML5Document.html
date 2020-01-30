@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{@baseURI}}scripts/libraries/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="{{@baseURI}}stylesheets/main.css">
+    {{@additionalSheets}}
+    {{@customSheets}}
+    <link rel="shortcut icon" href="{{@baseURI}}media/favicon.png">
+    <script>let baseURI = '{{@baseURI}}';</script>
+    <script src="{{@baseURI}}scripts/libraries/jquery-3.3.1.min.js"></script>
+    <script src="{{@baseURI}}scripts/libraries/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="{{@baseURI}}scripts/libraries/tinymce/tinymce.min.js"></script>
+    <script src="{{@baseURI}}scripts/libraries/datatables.min.js"></script>
+    <script src="{{@baseURI}}scripts/libraries/dataTables.checkboxes.min.js"></script>
+    <script src="{{@baseURI}}scripts/main.js"></script>
+    <script src="{{@baseURI}}scripts/mainx.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{@tabTitle}} | {{@appName}}</title>
+</head>
+<body>
+    {{@content}}
+</body>
+</html>

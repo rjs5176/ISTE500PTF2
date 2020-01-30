@@ -1,0 +1,560 @@
+/* Icons */
+.icon {
+    font-family: "Material Icons", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+
+    margin-right: 3px;
+}
+
+.button .icon, .button-noveil .icon {
+    line-height: 18px;
+    vertical-align: text-top;
+}
+
+/* Notifications */
+
+div#notifications {
+    position: absolute;
+    display: none;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
+    text-align: left;
+    box-shadow: var(--md-shadow);
+    box-sizing: border-box;
+    top: 15px;
+    right: 15px;
+    min-width: 400px;
+    max-width: 100%;
+    z-index: 999;
+}
+
+div#notifications.notifications-error {
+    border-left: 4px solid var(--error);
+}
+
+div#notifications.notifications-error .icon {
+    color: var(--error);
+}
+
+div#notifications.notifications-notice {
+    border-left: 4px solid var(--notice);
+}
+
+div#notifications.notifications-notice .icon {
+    color: var(--notice);
+}
+
+div#notifications.notifications-success {
+    border-left: 4px solid var(--success);
+}
+
+div#notifications.notifications-success .icon {
+    color: var(--success);
+}
+
+div#notifications div#notifications-dismiss {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    line-height: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+div#notifications ul li {
+    list-style-type: none;
+    font-size: 1rem;
+}
+
+div#notifications h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+div#notifications h3 img {
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+div#main div#notifications {
+    right: auto;
+    top: auto;
+}
+
+div#view div#notifications {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    min-width: 400px;
+    max-width: 100%;
+}
+
+/* Dialogs */
+
+p.error-dialog, p.about-dialog {
+    margin-top: 5px;
+}
+
+p.error-dialog {
+    color: var(--error);
+}
+
+p.error-dialog img, p.about-dialog img {
+    vertical-align: middle;
+    height: 19px;
+    margin-right: 5px;
+}
+
+p.about-dialog {
+    color: var(--success);
+}
+
+span#unreadNotificationCount img {
+    vertical-align: middle;
+}
+
+/* DataTable */
+
+div.ui-widget-header {
+    background-color: transparent;
+}
+
+table.dataTable {
+    border: 1px solid #FFFFFF;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+
+table.dataTable {
+    border-collapse: collapse;
+}
+
+table.dataTable tbody tr:nth-child(2n) {
+    background: #e6e6e6;
+}
+
+table.dataTable tbody tr:nth-child(2n + 1) {
+    background-color: #D5D3D4;
+}
+
+table.dataTable thead tr th{
+    background: var(--primary-color);
+}
+
+table.dataTable thead tr th div {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+table.dataTable td, table.dataTable th{
+    border: 1px solid #FFFFFF;
+}
+
+table.dataTable a {
+    color: blue;
+}
+
+/* Display Table */
+h2.region-title {
+    background-color: var(--primary-color);
+    color: #FFF;
+    padding: 5px 5px;
+    font-size: 1.3rem;
+    line-height: 19px;
+    vertical-align: middle;
+    user-select: none;
+}
+
+h2.region-title i.icon {
+    font-size: inherit;
+    line-height: 19px;
+    vertical-align: top;
+}
+
+a.history-link {
+    float: right;
+    color: #FFF;
+}
+
+table.table-display {
+    border-spacing: 20px 5px;
+}
+
+table.table-display tr {
+    vertical-align: top;
+}
+
+table.table-display tr td:nth-child(2n+1) {
+    text-align: right;
+    min-width: 100px;
+    color: #888;
+}
+
+table.table-display tr td:nth-child(2n) {
+    min-width: 160px;
+}
+
+table.table-display textarea.no-edit {
+    background-color: #EEE;
+    color: #333;
+    border: 1px solid var(--border-color);
+}
+
+table.table-display a > img {
+    vertical-align: middle;
+    padding-right: 3px;
+    height: 16px;
+}
+
+table.table-display ul li {
+    list-style-type: none;
+    margin-bottom: 2px;
+}
+
+/* Collapsible regions */
+
+h2.region-expand {
+    cursor: pointer;
+}
+
+h2.region-expand-collapsed::before {
+    content: "+";
+}
+
+h2.region-expand-expanded::before {
+    content: "-";
+}
+
+h2.region-expand-collapsed::before, h2.region-expand-expanded::before {
+    margin-right: 5px;
+    color: #A3A3A3;
+    background-color: #FFF;
+    border: 1px solid #A3A3A3;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 15px;
+    vertical-align: middle;
+}
+
+.region-expand + .region {
+    display: none;
+}
+
+/* Dialog */
+div.ui-dialog-titlebar {
+    background: var(--primary-color);
+    color: #FFF;
+}
+
+div.dialog {
+    display: none;
+}
+
+div.ui-dialog {
+    z-index: 999;
+}
+
+div.dialog > p span:first-child {
+    font-weight: 600;
+    display: block;
+}
+
+div.dialog > p input {
+    margin-top: 2px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Dialog table */
+table.dialog-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.dialog-table th, table.dialog-table td {
+    padding: 3px;
+}
+
+table.dialog-table tr td:first-child {
+    font-weight: 600;
+}
+
+table.dialog-table th {
+    font-weight: bold;
+}
+
+table.dialog-table tr:first-child {
+    border-bottom: 1px solid #000;
+    text-align: left;
+}
+
+/* Main content */
+div.main-content {
+    background-color: #FFF;
+    box-shadow: var(--bulletin-shadow);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+div.main-content > h2 {
+    display: block;
+    background-color: var(--primary-color);
+    color: #FFF;
+    margin-top: 0;
+    padding: 5px;
+}
+
+div.main-content p.about-dialog {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+div.main-content table td{
+    font-size: 1.2rem;
+}
+
+div.main-content table tr td:first-child {
+    font-weight: 600;
+    min-width: 150px;
+}
+
+/* Bulletins */
+div#bulletin-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+div.bulletin {
+    width: 250px;
+    margin-top: 15px;
+    margin-right: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: #fefefe;
+    box-shadow: var(--bulletin-shadow);
+}
+
+div#bulletin-list div.bulletin:last-child {
+    margin-right: 0;
+}
+
+div.bulletin > h2 {
+    color: #FFF;
+    margin-top: 0;
+    font-size: 1.2rem;
+    padding: 3px;
+    background-color: var(--primary-color);
+}
+
+div.bulletin > h2 > img {
+    vertical-align: text-bottom;
+    height: 20px;
+    width: 20px;
+    margin-right: 3px;
+}
+
+div.bulletin > div {
+    font-size: 1rem;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+div.bulletin.bulletin-i > h2{
+    background-color: var(--success);
+}
+
+div.bulletin.bulletin-a > h2{
+    background-color: var(--error);
+}
+
+/* Homepage Banner */
+
+div#home-banner {
+    margin-top: 15px;
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+    box-shadow: var(--bulletin-shadow);
+    background: var(--error);
+    color: #FFF;
+}
+
+p#dev-message {
+    margin-top: 15px;
+}
+
+p#dev-message img {
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+}
+
+/* Log display */
+#log-display textarea {
+    display: inline-block;
+    min-width: 800px;
+    min-height: 600px;
+    font-size: .8rem;
+}
+
+/* Perm audit display */
+#user-display ul li {
+    list-style-type: none;
+}
+
+#user-display p {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+a#about-link {
+    float: right;
+}
+
+ul#portal-menu {
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+ul#portal-menu li {
+    list-style-type: none;
+    display: inline;
+}
+
+ul#portal-menu li:last-child a {
+    margin-bottom: 0;
+}
+
+ul#portal-menu li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+    min-width: 275px;
+    background-color: #F3F3F3;
+    padding: 5px 10px;
+    box-shadow: var(--bulletin-shadow);
+    margin-bottom: 12px;
+    transition: background-color 0.3s linear;
+}
+
+ul#portal-menu li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+ul#portal-menu li a:hover {
+    background-color: #E3E3E3;
+}
+
+ul#portal-menu li a:hover::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+ul#portal-menu li a img {
+    height: 65px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+ul#portal-menu li a span {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: var(--menu-font-weight);
+    position: absolute;
+    left: 90px;
+    top: 25px;
+}
+
+table.calendar {
+    border-collapse: collapse;
+}
+
+table.calendar tr:nth-child(2n) {
+    background-color: #FFFFFF;
+}
+
+table.calendar td{
+    width: 200px;
+    height: 175px;
+    vertical-align: top;
+    border: 1px solid var(--border-color);
+    padding: 5px;
+}
+
+table.calendar td.currentDate {
+    background-color: var(--border-color);
+}
+
+table.calendar td.currentDate h3 {
+    font-weight: 600;
+}
+
+table.calendar h3 {
+    text-decoration: underline;
+}
+
+table.calendar td ul li.closed a{
+    color: #888;
+}
+
+h3.calendarTitle {
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+.tooltip {
+    cursor: help;
+    color: var(--error) !important;
+    text-decoration: underline;
+}
+
+@media screen and (max-device-width: 800px) {
+    div#notifications {
+        min-width: 0;
+        width: 90%;
+        left: 10px;
+        right: auto;
+    }
+}

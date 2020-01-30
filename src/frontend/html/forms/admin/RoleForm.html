@@ -1,0 +1,21 @@
+<div class="button-bar">
+    <span class="button form-submit-button" id="edit"><i class="icon">save</i>Save</span>
+    <a class="button delete-button confirm-button" href="javascript: remove('{{@id}}')"><i class="icon">delete</i>Delete</a>
+    <a class="button" href="{{@baseURI}}admin/roles"><i class="icon">backspace</i>Cancel</a>
+</div>
+<form id="edit-form" class="table-form" onsubmit="{{@formScript}}">
+    <h2 class="region-title"><i class="icon">group</i>Role Profile<a class="history-link" href="{{@baseURI}}history/role/{{@id}}"><i class="icon" title="View History">history</i></a></h2>
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td class="required">Name</td>
+            <td><input type="text" id="name" value="{{@name}}"></td>
+            <td>Permissions</td>
+            <td>
+                <select id="permissions" multiple size="10">{{@permissionSelect}}</select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<script src="{{@baseURI}}scripts/admin/roles.js"></script>

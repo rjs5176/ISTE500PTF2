@@ -1,0 +1,16 @@
+<nav>
+    <ul>
+        {{@navigation}}<!--
+        --><li><a class='nav-item' href="{{@baseURI}}inbox"><i class="icon">inbox</i>Inbox (<span id="unreadNotificationCount"></span>)</a></li><!--
+        --><li>
+        <span class='nav-item'><i class="icon">account_box</i>Operator</span>
+        <ul>
+            <li><a href="{{@baseURI}}account"><i class="icon">account_circle</i>My Account</a></li>
+            <li><a href="{{@baseURI}}about"><i class="icon">help</i>About {{@appName}}</a></li>
+            <li><a href="{{@baseURI}}"><i class="icon">home</i>Return To Portal</a></li>
+            <li><a href="javascript: clearCookies()"><i class="icon">refresh</i>Clear Session Cache</a></li>
+            <li><a href="{{@baseURI}}logout"><i class="icon">lock</i>Logout</a></li>
+        </ul>
+    </li>
+    </ul>
+</nav>

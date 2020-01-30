@@ -1,0 +1,34 @@
+<div class="button-bar">
+    <span class="button form-submit-button" id="edit"><i class="icon">send</i>Send</span>
+</div>
+<form id="edit-form" class="table-form" onsubmit="return send()">
+    <h2 class="region-title"><i class="icon">email</i>Notification Profile</h2>
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td class="required">Title</td>
+            <td><input type="text" id="title"></td>
+            <td class="required">Important</td>
+            <td>
+                <select id="important">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="required">Message</td>
+            <td colspan="3"><textarea id="data"></textarea></td>
+        </tr>
+        <tr>
+            <td>Roles</td>
+            <td>
+                <select id="roles" multiple size="10">{{@roleSelect}}</select>
+            </td>
+            <td>Send E-Mail?</td>
+            <td><input type="checkbox" id="email"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<script src="{{@baseURI}}scripts/admin/notifications.js"></script>
