@@ -1,4 +1,5 @@
 -- PTF TRS Module
+USE ws_piratetoyfund;
 
 -- Use for both Partners and Donors
 CREATE TABLE `TRS_Organization`(
