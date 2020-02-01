@@ -22,4 +22,8 @@ class ExtConfig
     public const ROUTES = array(
         'trs' => 'extensions\trs\controllers\TRSController',
     );
+	
+	//public const OPTIONS = array(
+		
+	);
 }
