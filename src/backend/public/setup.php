@@ -35,4 +35,5 @@ $secret = hash('SHA512', openssl_random_pseudo_bytes(2048));
         <td><?=$secret?></td>
     </tr>
 </table>
+<p>PASSWORD <?=password_verify($salt . 'MercuryPassword', $password) ? 'OK' : 'FAIL'?></p>
 <h2 style="color: red">These values are not tied to your installation, they should be used by the DBA to configure an initial installation!</h2>

@@ -2,13 +2,8 @@
 
 }
 
-header span#company-logo {
-    background-image: url('../media/custommedia/company_logo.png');
-    filter: var(--image-shadow);
-}
-
 header span#app-logo {
-    background-image: url('../media/custommedia/merlot_logo.png');
+    background-image: url('../media/custommedia/trs_logo.png');
     filter: var(--image-shadow);
     right: 10px;
     left: auto;
@@ -16,5 +11,6 @@ header span#app-logo {
 }
 
 span#login-logo {
-    background-image: url('../media/custommedia/merlot_logo.png');
+    background-image: url('../media/custommedia/trs_logo.png');
+    background-size: auto 100%;
 }
