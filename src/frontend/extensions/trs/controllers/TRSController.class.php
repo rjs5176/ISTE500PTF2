@@ -12,6 +12,7 @@ namespace extensions\trs\controllers;
 use controllers\Controller;
 //use extensions\tickets\views\pages\TicketHome;
 use views\View;
+use extentions\trs\views\pages\TRSHomepage;
 
 class TRSController extends Controller
 {
@@ -26,6 +27,6 @@ class TRSController extends Controller
      */
     public function getPage(): ?View
     {
-        return NULL;
+        return new TRSHomepage();
     }
 }
