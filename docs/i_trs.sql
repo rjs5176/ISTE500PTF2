@@ -109,14 +109,15 @@ CREATE TABLE `TRS_OrderItem`(
   CONSTRAINT `TRS_OrderItem_ibfk_3` FOREIGN KEY (`warehouse`) REFERENCES `TRS_Warehouse`(`id`) ON UPDATE CASCADE
 );
 
---- Table that joins a Orgnazation with its Representative, identified as a User
-CREATE TABLE `TRS_OrganizationRepresentative`(
-	`organization` int(11) UNSIGNED NOT NULL,
-	`representative` int(11) UNSIGNED NOT NULL,
-	PRIMARY KEY (`organization`,`representative`),
-	CONSTRAINT `TRS_OrganizationRepresentative_ibfk_1` FOREIGN KEY (`organization`) REFERENCES `TRS_Organization`(`id`) ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT `TRS_OrganizationRepresentative_ibfk_2` FOREIGN KEY (`representative`) REFERENCES `User` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
-);
+CREATE TABLE `TRS_Organization_Representative` (
+  `organization` INT(11) UNSIGNED NOT NULL,
+  `user` INT(11) UNSIGNED NOT NULL,
+  CONSTRAINT `TRS_Organization_Representative_ibfk_1` FOREIGN KEY (`organization`) REFERENCES `TRS_Organization`(`id`) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT `TRS_Organization_Representative_ibfk_2` FOREIGN KEY (`user`) REFERENCES `User`(`id`) ON UPDATE CASCADE ON DELETE CASCADE
+  );
 
 -- Permissions
 INSERT INTO `Permission`(`code`) VALUES ('trs');
+INSERT INTO `Permission`(`code`) VALUES ('trs_backoffice'), ('trs_repportal');
+INSERT INTO `Permission`(`code`) VALUES ('trs_organizations-r'), ('trs_organizations-w');
+INSERT INTO `Permission`(`code`) VALUES ('trs_commodities-r'), ('trs_commodities-w'), ('trs_commodities-a'), ('trs_warehouses-r'), ('trs_warehouses-w');
