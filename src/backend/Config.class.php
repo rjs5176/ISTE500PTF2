@@ -14,21 +14,22 @@
  * Class Config
  * Configuration options
  */
-abstract class Config_Generic // THIS FILE MUST BE RENAMED Config.class.php
+abstract class Config // THIS FILE MUST BE RENAMED Config.class.php
 {
     const OPTIONS = array(
-        'baseURI' => '/',
+        'baseURI' => '/ic/',
 
-        'databaseHost' => 'your.server',
-        'databaseName' => 'your_database',
-        'databaseUser' => 'your_user',
-        'databasePassword' => 'your_password',
+        'databaseHost' => 'localhost',
+        'databaseName' => 'ws_piratetoyfund',
+        'databaseUser' => 'ws-piratetoyfund',
+        'databasePassword' => 'piratetoyfundDBpw2020',
 
-        'salt' => 'your_salt_here',
+        'salt' => '50d059db990556b3114774cf164619e3caf8a84e6fd52ca60c8fc1c6c071b404197e24d2e3707e24915f65f03ff036c5a22a809d9ef40e139a80b36e42c39446',
         'allowMultipleSessions' => FALSE,
 
         // Define extensions to be enabled
         'enabledExtensions' => array(
+            'trs'
         ),
 
         'ldapEnabled' => FALSE,

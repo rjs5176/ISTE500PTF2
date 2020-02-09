@@ -606,6 +606,29 @@ function disableAutocomplete()
 }
 
 /**
+ * Return a form as a JSON object
+ * @param form
+ */
+function formToJSON(form)
+{
+    let returnObject = {};
+
+    let selects = $(form).find("select");
+    let inputs = $(form).find("input");
+
+    $.each(selects, function(i, v){
+        returnObject[v.id] = $(v).val();
+
+    });
+
+    $.each(inputs, function(i, v){
+        returnObject[v.id] = v.value;
+    });
+
+    return returnObject;
+}
+
+/**
  * Setup document
  */
 $(document).ready(function(){

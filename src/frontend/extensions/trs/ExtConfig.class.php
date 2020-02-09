@@ -1,7 +1,13 @@
 <?php
 /**
- * User: rjs5176
- * Date: 02/01/2020
+ * LLR Technologies & Associated Services
+ * Information Systems Development
+ *
+ * Mercury MAP Navigator
+ *
+ * User: lromero
+ * Date: 2/08/2020
+ * Time: 2:23 PM
  */
 
 
@@ -11,15 +17,22 @@ namespace extensions\trs;
 class ExtConfig
 {
     public const MENU = array(
-        'toyrequestsystem' => array(
-            'title' => 'Toy Request System',
-            'permission' => 'trs',
-            'icon' => '',
-            'link' => 'trs'
+        'trs_back_office' => array(
+            'title' => 'TRS Back Office',
+            'permission' => 'trs_backoffice',
+            'icon' => 'facilitiesmanagement.svg',
+            'link' => 'trsbackoffice'
         ),
+        'trs_rep_portal' => array(
+            'title' => 'TRS Representative Portal',
+            'permission' => 'trs_repportal',
+            'icon' => 'servicecenter.svg',
+            'link' => 'trsrepportal'
+        )
     );
 
     public const ROUTES = array(
-        'trs' => 'extensions\trs\controllers\TRSController',
+        'trsbackoffice' => 'extensions\trs\controllers\TRSBackOfficeController',
+        'trsrepportal' => 'extensions\trs\controllers\TRSRepPortalController',
     );
 }

@@ -1,0 +1,52 @@
+{{@menu}}
+<form id="org-form" class="table-form" onsubmit="{{@formScript}}">
+    <h2 class="region-title"><i class="icon">work</i>Organization Profile{{@historyLink}}</h2>
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td class="required">Name</td>
+            <td><input type="text" id="name" value="{{@name}}"></td>
+            <td class="required">Type</td>
+            <td>
+                <select id="type">
+                    <option value="partner">Partner</option>
+                    <option value="donor" {{@typeDonor}}>Donor</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="required">Approved</td>
+            <td>
+                <select id="approved">
+                    <option value="1">Yes</option>
+                    <option value="0" {{@approvedNo}}>No</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h2 class="region-title">Contact Information</h2>
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td>Phone #</td>
+            <td><input type="text" maxlength="14" id="phone" value="{{@phone}}"></td>
+            <td>E-Mail Address</td>
+            <td><input type="text" id="email" value="{{@email}}"></td>
+        </tr>
+        <tr>
+            <td class="required">Street Address</td>
+            <td><input type="text" id="street" value="{{@street}}"></td>
+            <td class="required">City</td>
+            <td><input type="text" id="city" value="{{@city}}"></td>
+        </tr>
+        <tr>
+            <td class="required">State</td>
+            <td><input maxlength="2" id="state" value="{{@state}}"></td>
+            <td class="required">Zip Code</td>
+            <td><input type="text" maxlength="10" value="{{@zipCode}}"></td>
+        </tr>
+        </tbody>
+    </table>
+    {{@representativeManagement}}
+</form>

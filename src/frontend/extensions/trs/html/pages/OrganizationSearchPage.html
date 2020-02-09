@@ -1,0 +1,55 @@
+<div class="button-bar">
+    <span id="search" class="button form-submit-button"><i class="icon">search</i>Search</span>
+    <a href="{{@baseURI}}trsbackoffice/organizations/new" class="button"><i class="icon">add</i>Create Organization</a>
+</div>
+<form id="search-form" class="search-form" onsubmit="return search()">
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+            <td>Type</td>
+            <td>
+                <select id="type" multiple size="2">
+                    <option value="partner">Partner</option>
+                    <option value="donor">Donor</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+        <tbody class="additional-fields">
+        <tr>
+            <td>Phone #</td>
+            <td><input type="text" id="phone"></td>
+            <td>E-Mail Addr</td>
+            <td><input type="text" id="email"></td>
+        </tr>
+        <tr>
+            <td>Street Addr</td>
+            <td><input type="text" id="street"></td>
+            <td>City</td>
+            <td><input type="text" id="city"></td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td><input type="text" id="state"></td>
+            <td>Zip Code</td>
+            <td><input type="text" id="zip"></td>
+        </tr>
+        <tr>
+            <td>Approved?</td>
+            <td>
+                <select id="approved" multiple size="2">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-bar">
+        <span class="button-noveil search-additional-field-toggle">Show More</span>
+    </div>
+</form>
+<div id="results"></div>
+<script src="{{@baseURI}}scripts/trs/organizations.js"></script>

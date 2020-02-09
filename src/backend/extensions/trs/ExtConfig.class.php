@@ -1,7 +1,13 @@
 <?php
 /**
- * User: rjs5176
- * Date: 02/01/2020
+ * LLR Technologies & Associated Services
+ * Information Systems Development
+ *
+ * INS WEBNOC API
+ *
+ * User: lromero
+ * Date: 2/08/2020
+ * Time: 2:32 PM
  */
 
 
@@ -10,20 +16,11 @@ namespace extensions\trs;
 
 class ExtConfig
 {
-    public const MENU = array(
-        'toyrequestsystem' => array(
-            'title' => 'Toy Request System',
-            'permission' => 'trs',
-            'icon' => '',
-            'link' => 'trs'
-        ),
-    );
+    public const EXT_VERSION = '1.0.0';
 
     public const ROUTES = array(
         'trs' => 'extensions\trs\controllers\TRSController',
     );
-	
-	//public const OPTIONS = array(
-		
-	);
+
+    public const OPTIONS = array();
 }
