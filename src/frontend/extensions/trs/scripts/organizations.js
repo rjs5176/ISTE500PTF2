@@ -1,10 +1,9 @@
-let form = document.getElementById('search-form');
-
 /**
  * Search API for Organizations
  */
 function search()
 {
+    let form = document.getElementById('search-form');
     let search = formToJSON(form);
     apiRequest('POST', 'trs/organizations/search', search).done(function(json){
         let rows = [];
@@ -38,6 +37,50 @@ function search()
     });
 
     return false;
+}
+
+/**
+ * Create an organization
+ */
+function createOrganization()
+{
+    let create = formToJSON(document.getElementById('org-form'));
+
+    apiRequest('POST', 'trs/organizations', create).done(function(json){
+        if(json.code === 201)
+            window.location.replace(baseURI + 'trsbackoffice/organizations/' + json.data.id + '?SUCCESS=Organization Created')
+    });
+
+    return false;
+}
+
+/**
+ * Update organization details
+ * @param id
+ * @returns {boolean}
+ */
+function editOrganization(id)
+{
+    let edit = formToJSON(document.getElementById('org-form'));
+
+    apiRequest('PUT', 'trs/organizations/' + id, edit).done(function(json){
+        if(json.code === 204)
+            window.location.replace(baseURI + 'trsbackoffice/organizations/?SUCCESS=Organization Updated')
+    });
+
+    return false;
+}
+
+/**
+ * Delete organization
+ * @param id
+ */
+function deleteOrg(id)
+{
+    apiRequest('DELETE', 'trs/organizations/' + id, {}).done(function(json){
+        if(json.code === 204)
+            window.location.replace(baseURI + 'trsbackoffice/organizations?SUCCESS=Organization Deleted');
+    });
 }
 
 $(document).ready(function(){

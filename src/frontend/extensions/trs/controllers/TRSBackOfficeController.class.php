@@ -17,6 +17,7 @@ namespace extensions\trs\controllers;
 use controllers\Controller;
 use extensions\trs\views\pages\BackOfficeHomePage;
 use extensions\trs\views\pages\OrganizationEditPage;
+use extensions\trs\views\pages\OrganizationNewPage;
 use extensions\trs\views\pages\OrganizationSearchPage;
 use views\View;
 
@@ -43,6 +44,10 @@ class TRSBackOfficeController extends Controller
             if($p2 === NULL)
             {
                 return new OrganizationSearchPage();
+            }
+            else if($p2 === 'new' AND $p3 === NULL)
+            {
+                return new OrganizationNewPage();
             }
             else if($p2 !== NULL AND $p3 === NULL)
             {

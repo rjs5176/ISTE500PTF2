@@ -16,6 +16,7 @@ namespace extensions\trs\database;
 
 use database\DatabaseConnection;
 use database\DatabaseHandler;
+use database\PreparedStatement;
 use exceptions\EntryNotFoundException;
 use extensions\trs\models\Organization;
 
@@ -116,5 +117,69 @@ class OrganizationDatabaseHandler extends DatabaseHandler
         }
 
         return $organizations;
+    }
+
+    /**
+     * @param array $args Assoc array of all parameters and their values
+     * @return Organization
+     * @throws EntryNotFoundException
+     * @throws \exceptions\DatabaseException
+     */
+    public static function insert(array $args): Organization
+    {
+        $c = new DatabaseConnection();
+
+        $i = $c->prepare(PreparedStatement::buildQueryString('TRS_Organization', PreparedStatement::INSERT, Organization::FIELDS));
+
+        $i->bindParams($args);
+
+        $i->execute();
+
+        $id = $c->getLastInsertId();
+
+
+        $c->close();
+
+        return self::selectById($id);
+    }
+
+    /**
+     * @param int $id
+     * @param array $args
+     * @return Organization
+     * @throws EntryNotFoundException
+     * @throws \exceptions\DatabaseException
+     */
+    public static function update(int $id, array $args): Organization
+    {
+        $c = new DatabaseConnection();
+
+        $u = $c->prepare(PreparedStatement::buildQueryString('TRS_Organization', PreparedStatement::UPDATE, Organization::FIELDS));
+
+        $u->bindParams(array_merge($args, array('id' => $id)));
+
+        $u->execute();
+
+        $c->close();
+
+        return self::selectById($id);
+    }
+
+    /**
+     * @param int $id
+     * @return bool
+     * @throws \exceptions\DatabaseException
+     */
+    public static function delete(int $id): bool
+    {
+        $c = new DatabaseConnection();
+
+        $d = $c->prepare('DELETE FROM `TRS_Organization` WHERE `id` = ?');
+        $d->bindParam(1, $id, DatabaseConnection::PARAM_INT);
+        $d->execute();
+
+        $c->close();
+
+        return $d->getRowCount() === 1;
     }
 }

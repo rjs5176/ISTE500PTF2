@@ -1,5 +1,5 @@
 {{@menu}}
-<form id="org-form" class="table-form" onsubmit="{{@formScript}}">
+<form id="org-form" class="table-form" onsubmit="return {{@formScript}}">
     <h2 class="region-title"><i class="icon">work</i>Organization Profile{{@historyLink}}</h2>
     <table class="table-display">
         <tbody>
@@ -29,7 +29,7 @@
     <table class="table-display">
         <tbody>
         <tr>
-            <td>Phone #</td>
+            <td class="required">Phone #</td>
             <td><input type="text" maxlength="14" id="phone" value="{{@phone}}"></td>
             <td>E-Mail Address</td>
             <td><input type="text" id="email" value="{{@email}}"></td>
@@ -44,9 +44,10 @@
             <td class="required">State</td>
             <td><input maxlength="2" id="state" value="{{@state}}"></td>
             <td class="required">Zip Code</td>
-            <td><input type="text" maxlength="10" value="{{@zipCode}}"></td>
+            <td><input id="zip" type="text" maxlength="10" value="{{@zip}}"></td>
         </tr>
         </tbody>
     </table>
     {{@representativeManagement}}
 </form>
+<script src="{{@baseURI}}scripts/trs/organizations.js"></script>
