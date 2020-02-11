@@ -137,6 +137,8 @@ function addRepresentative(id)
             loadReps(id, true); // Force load of reps list
         }
     });
+
+    return false;
 }
 
 function removeRepresentative(id, username)

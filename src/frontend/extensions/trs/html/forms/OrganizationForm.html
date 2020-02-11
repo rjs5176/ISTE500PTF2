@@ -50,4 +50,14 @@
     </table>
     {{@representativeManagement}}
 </form>
+<!-- Dialog Forms -->
+<div id="addRepresentative-button-dialog" class="dialog" title="Add Representative">
+    <form onsubmit="return addRepresentative('{{@id}}')">
+        <p>
+            <span class="required">Username</span>
+            <input type="text" id="addRepresentativeUsername">
+        </p>
+        <input class="button" type="submit" value="Go">
+    </form>
+</div>
 <script src="{{@baseURI}}scripts/trs/organizations.js"></script>
