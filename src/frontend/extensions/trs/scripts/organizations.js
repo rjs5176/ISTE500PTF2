@@ -14,12 +14,12 @@ function search()
 
             rows.push([
                 v.name,
-                v.type,
+                v.type.toUpperCase(),
                 v.street,
                 v.city,
                 v.state,
                 v.zip,
-                v.approved
+                v.approved === '1' ? '✓' : ''
             ]);
         });
 
