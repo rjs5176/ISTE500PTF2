@@ -83,6 +83,73 @@ function deleteOrg(id)
     });
 }
 
+let repsLoaded = false; // Has the following function been run?
+
+/**
+ * Load representatives for this organization
+ * @param id
+ * @param override Force the rep list to be re-loaded?
+ */
+function loadReps(id, override = false)
+{
+    let result = document.getElementById('representative-region');
+
+    if(repsLoaded && !override)
+        return;
+
+    apiRequest('GET', 'trs/organizations/' + id + '/representatives', {}).done(function(json){
+        let rows = [];
+        let refs = [];
+
+        $.each(json.data, function(i, v){
+            rows.push([
+                v.username,
+                v.firstName,
+                v.lastName,
+                v.email,
+                'REMOVE'
+            ]);
+
+            refs.push(v.username);
+        });
+
+        $(result).mlTable({
+            header: ['Username', 'First Name', 'Last Name', 'E-Mail Address', ''],
+            href: "javascript: removeRepresentative('" + id + "', '{{%}}')",
+            usePlaceholder: true,
+            linkColumn: 4,
+            refs: refs,
+            rows: rows,
+        });
+
+        repsLoaded = true;
+    });
+}
+
+function addRepresentative(id)
+{
+    let username = document.getElementById('addRepresentativeUsername').value;
+
+    apiRequest('POST', 'trs/organizations/' + id + '/representatives', {username: username}).done(function(json){
+        if(json.code === 204)
+        {
+            showNotifications('success', ['Representative added']);
+            loadReps(id, true); // Force load of reps list
+        }
+    });
+}
+
+function removeRepresentative(id, username)
+{
+    apiRequest('DELETE', 'trs/organizations/' + id + '/representatives', {username: username}).done(function(json){
+        if(json.code === 204)
+        {
+            showNotifications('success', ['Representative removed']);
+            loadReps(id, true); // Force load of reps list
+        }
+    });
+}
+
 $(document).ready(function(){
     if(!document.getElementById("results"))
         return;

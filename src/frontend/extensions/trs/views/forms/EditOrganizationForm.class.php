@@ -29,7 +29,7 @@ class EditOrganizationForm extends Form
         $this->setVariable('menu', self::templateFileContents('OrgEditFormMenu', self::TEMPLATE_ELEMENT, 'trs'));
         $this->setVariable('formScript', 'editOrganization(\'{{@id}}\')');
 
-        // TODO: representativeManagement
+        $this->setVariable('representativeManagement', self::templateFileContents('OrgRepresentativeManagement', self::TEMPLATE_ELEMENT, 'trs'));
 
         // History link
         $this->setVariable('historyLink', "<a class=\"history-link\" href=\"{{@baseURI}}history/trsorganization/{{@id}}\"><i class=\"icon\" title=\"View History\">history</i></a>");
