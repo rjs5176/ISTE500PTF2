@@ -1,0 +1,19 @@
+<div class="button-bar">
+    <span id="search" class="button form-submit-button"><i class="icon">search</i>Search</span>
+    <a href="{{@baseURI}}trsbackoffice/commoditycategory/new" class="button"><i class="icon">add</i>Create Commodity Category</a>
+</div>
+<form id="search-form" class="search-form" onsubmit="return search()">
+    <table class="table-display">
+        <tbody>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-bar">
+        <span class="button-noveil search-additional-field-toggle">Show More</span>
+    </div>
+</form>
+<div id="results"></div>
+<script src="{{@baseURI}}scripts/trs/commodityCategories.js"></script>
